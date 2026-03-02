@@ -23,4 +23,8 @@ struct ControllerConfig
     communication_radius::Float64
     safety_distance::Float64
 end
+
+function ControllerConfig(mpc_params::MPCParams, use_chance_constraints::Bool, confidence_level::Float64, communication_radius::Float64)
+    return ControllerConfig(mpc_params, use_chance_constraints, confidence_level, communication_radius, 0.5)
+end
 end
